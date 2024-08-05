@@ -1,10 +1,10 @@
 on:
   rss:
     url:
-      - https://rsshub.app/zhihu/people/activities/ji-qi-zhi-xin-65
-      - https://rsshub.app/zhihu/people/activities/liang-zi-wei-48
-      - https://rsshub.app/zhihu/people/activities/xin-zhi-yuan-88-3
-      - https://rsshub.app/zhihu/people/activities/zhang-jun-87-61
+      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/ji-qi-zhi-xin-65
+      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/liang-zi-wei-48
+      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/xin-zhi-yuan-88-3
+      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/zhang-jun-87-61
       - https://papers.cool/arxiv/cs.IR/feed
 jobs:
   request:
