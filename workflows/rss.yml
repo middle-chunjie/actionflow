@@ -1,10 +1,11 @@
 on:
   rss:
     url:
-      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/ji-qi-zhi-xin-65
-      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/liang-zi-wei-48
-      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/xin-zhi-yuan-88-3
-      - https://rsshub-madiffnx.cloud.sealos.io/zhihu/people/activities/zhang-jun-87-61
+      - https://rsshub.rssforever.com/zhihu/people/activities/ji-qi-zhi-xin-65
+      - https://rsshub.rssforever.com/zhihu/people/activities/liang-zi-wei-48
+      - https://rsshub.rssforever.com/zhihu/people/activities/xin-zhi-yuan-88-3
+      - https://rsshub.rssforever.com/zhihu/people/activities/zhang-jun-87-61
+      - https://rsshub.rssforever.com/zhihu/people/activities/dou-hong-jian-44
       - https://papers.cool/arxiv/cs.IR/feed
 jobs:
   request:
@@ -12,12 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set folder for RSS 1
-        if: ${{ contains('https://rsshub.app/zhihu/people/activities/ji-qi-zhi-xin-65,https://rsshub.app/zhihu/people/activities/liang-zi-wei-48,https://rsshub.app/zhihu/people/activities/xin-zhi-yuan-88-3,https://rsshub.app/zhihu/people/activities/zhang-jun-87-61', on.rss.url) }}
+        if: ${{ contains('https://rsshub.rssforever.com/zhihu/people/activities/ji-qi-zhi-xin-65,https://rsshub.rssforever.com/zhihu/people/activities/liang-zi-wei-48,https://rsshub.rssforever.com/zhihu/people/activities/xin-zhi-yuan-88-3,https://rsshub.rssforever.com/zhihu/people/activities/zhang-jun-87-61', on.rss.url) }}
         run: echo "::set-output name=folder::AI三大会"
 
       - name: Set folder for RSS 2
         if: ${{ on.rss.url == 'https://papers.cool/arxiv/cs.IR/feed' }}
         run: echo "::set-output name=folder::Arxiv-IR"
+        
+      - name: Set folder for RSS 3
+        if: ${{ on.rss.url == 'https://rsshub.rssforever.com/zhihu/people/activities/dou-hong-jian-44' }}
+        run: echo "::set-output name=folder::AI Box"
 
       - name: Make a HTTP Request
         uses: actionsflow/axios@v1
